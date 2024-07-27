@@ -14,9 +14,10 @@ class SettingsVC: UIViewController {
         view.configure(with: viewModel)
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        primaryView.delegate = self
         setUpView()
     }
     
@@ -31,5 +32,22 @@ class SettingsVC: UIViewController {
             primaryView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             primaryView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+
+
+// MARK: - Extensions
+
+extension SettingsVC: SettingsViewDelegate {
+    func settingsView(_ settingsView: SettingsView, didTap option: SettingOption) {
+        switch option {
+        case .privacyPolicy:
+            break
+        case .terms:
+            break
+        case .rateApp:
+            break
+        }
     }
 }
