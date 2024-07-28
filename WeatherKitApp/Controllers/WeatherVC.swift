@@ -17,6 +17,11 @@ class WeatherVC: UIViewController {
         setUpView()
         getLocation()
     }
+    
+    @objc
+    private func didTapUpgrade() {
+        // show
+    }
 
     private func getLocation() {
         LocationManager.shared.getCurrentLocation { location in
@@ -37,7 +42,7 @@ class WeatherVC: UIViewController {
     }
     
     private func setUpView() {
-        view.backgroundColor = .orange
+        view.backgroundColor = .systemBackground
         
         view.addSubview(primaryView)
         
