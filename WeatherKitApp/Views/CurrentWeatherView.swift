@@ -17,7 +17,7 @@ final class CurrentWeatherView: UIView {
         super.init(frame: frame)
 
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         createCollectionView()
     }
     

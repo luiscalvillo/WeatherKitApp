@@ -17,11 +17,6 @@ class WeatherVC: UIViewController {
         setUpView()
         getLocation()
     }
-    
-    @objc
-    private func didTapUpgrade() {
-        // show
-    }
 
     private func getLocation() {
         LocationManager.shared.getCurrentLocation { location in
