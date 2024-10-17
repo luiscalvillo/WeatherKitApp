@@ -80,7 +80,7 @@ final class CurrentWeatherView: UIView {
                 heightDimension: .absolute(150)),
                                                            subitems: [item])
             
-            group.contentInsets = .init(top: 1, leading: 2, bottom: 1, trailing: 2)
+            group.contentInsets = .init(top: 1, leading: 8, bottom: 1, trailing: 8)
             
             let section = NSCollectionLayoutSection(group: group)
             section.orthogonalScrollingBehavior = .continuous

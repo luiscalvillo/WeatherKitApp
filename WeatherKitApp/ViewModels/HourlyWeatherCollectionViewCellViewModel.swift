@@ -21,7 +21,7 @@ struct HourlyWeatherCollectionViewCellViewModel {
     }
     
     public var temperature: String {
-        return "\(Int(model.temperature.converted(to: .fahrenheit).value)) °F"
+        return "\(Int(model.temperature.converted(to: .fahrenheit).value))°"
     }
     
     public var hour: String {

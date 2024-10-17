@@ -26,11 +26,11 @@ struct DailyWeatherCollectionViewCellViewModel {
     }
     
     public var temperature: String {
-        return "\(string(for: model.lowTemperature)) - \(string(for: model.highTemperature))"
+        return "\(string(for: model.lowTemperature)) / \(string(for: model.highTemperature))"
     }
     
     private func string(for temp: Measurement<UnitTemperature>) -> String {
-        return "\(Int(temp.converted(to: .fahrenheit).value)) °F"
+        return "\(Int(temp.converted(to: .fahrenheit).value))°"
     }
     
     public var day: String {

@@ -13,7 +13,7 @@ final class WeatherManager {
     static let shared = WeatherManager()
     
     let service = WeatherService.shared
-        
+    
     public private(set) var currentWeather: CurrentWeather?
     public private(set) var hourlyWeather: [HourWeather] = []
     public private(set) var dailyWeather: [DayWeather] = []
@@ -30,8 +30,6 @@ final class WeatherManager {
                 self.currentWeather = result.currentWeather
                 self.dailyWeather = result.dailyForecast.forecast
                 self.hourlyWeather = result.hourlyForecast.forecast
-                
-        
                 
                 completion()
             } catch {
