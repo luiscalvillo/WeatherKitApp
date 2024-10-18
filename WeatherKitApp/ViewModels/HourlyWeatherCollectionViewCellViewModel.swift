@@ -25,7 +25,8 @@ struct HourlyWeatherCollectionViewCellViewModel {
     }
     
     public var hour: String {
-        let hour = Calendar.current.component(.hour, from: model.date)
-        return "\(hour):00"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h a"  // 'h' is for 12-hour format, 'a' is for AM/PM
+        return formatter.string(from: model.date)
     }
 }

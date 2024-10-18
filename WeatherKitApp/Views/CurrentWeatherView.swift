@@ -15,9 +15,9 @@ final class CurrentWeatherView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         translatesAutoresizingMaskIntoConstraints = false
-
+        
         createCollectionView()
     }
     
@@ -45,10 +45,10 @@ final class CurrentWeatherView: UIView {
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-          collectionView.topAnchor.constraint(equalTo: topAnchor),
-          collectionView.leftAnchor.constraint(equalTo: leftAnchor),
-          collectionView.rightAnchor.constraint(equalTo: rightAnchor),
-          collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.leftAnchor.constraint(equalTo: leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         self.collectionView = collectionView
@@ -89,7 +89,7 @@ final class CurrentWeatherView: UIView {
         case .daily:
             let item = NSCollectionLayoutItem(layoutSize: .init(
                 widthDimension: .fractionalWidth(1.0),
-                heightDimension: .fractionalHeight(1.0)))
+                heightDimension: .fractionalHeight(0.5)))
             
             let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(
                 widthDimension: .fractionalWidth(1.0),
@@ -97,12 +97,12 @@ final class CurrentWeatherView: UIView {
                                                          subitems: [item])
             
             group.contentInsets = .init(top: 2, leading: 2, bottom: 2, trailing: 2)
-
             
             return NSCollectionLayoutSection(group: group)
         }
     }
 }
+
 
 // MARK: - Extensions
 
@@ -124,7 +124,6 @@ extension CurrentWeatherView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         
         switch viewModel[indexPath.section] {
         case .current(let viewModel):
